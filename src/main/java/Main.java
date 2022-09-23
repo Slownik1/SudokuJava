@@ -1,12 +1,12 @@
 public class Main {
 
-    public static boolean Array(int[][] array){
-        boolean flag =true;
+    public static boolean Array(int[][] array) {
+        boolean flag = true;
 
-        for(int i=0; i<8; i++) {
-            for (int j=0; j<9; j++) {
-                    if(array[i][j]==array[i+1][j]){
-                        flag=false;
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (array[i][j] == array[i + 1][j]) {
+                    flag = false;
                 }
             }
         }
@@ -18,6 +18,22 @@ public class Main {
                 }
             }
         }
+
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (array[i][j] == array[i][j + 1]) {
+                    flag = false;
+                }
+            }
+        }
+
+        for (int i = 0; i < 9 - 2; i += 3) {
+            for (int j = 0; j < 9 - 2; j += 3) {
+                if (array[i][j] == array[i][j + 1]) {
+                    flag = false;
+                }
+        }
+    }
 
         return flag;
     }
